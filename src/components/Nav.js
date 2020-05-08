@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AppBar, Toolbar, Avatar, IconButton, Tooltip, Menu, MenuItem, Checkbox } from "@material-ui/core";
 import Context from "./Context";
-import { People, Style } from "@material-ui/icons";
+import { People, Style, Add, ViewList } from "@material-ui/icons";
 import { withRouter, Link } from "react-router-dom";
 
 function Nav({ history }) {
@@ -30,6 +30,16 @@ function Nav({ history }) {
             <Tooltip title="Users">
               <IconButton component={Link} to="/users">
                 <People style={{ color: "white" }} />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Add">
+              <IconButton component={Link} to="/add">
+                <Add style={{ color: "white" }} />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="View">
+              <IconButton component={Link} to="/view">
+                <ViewList style={{ color: "white" }} />
               </IconButton>
             </Tooltip>
             {ctx.auth.id && (
